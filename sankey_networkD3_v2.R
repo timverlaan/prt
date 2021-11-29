@@ -5,13 +5,6 @@ PRT_sankey <- read_excel("~/PRT/prt/PRT_sankey.xlsx")
 
 d <- PRT_sankey[, c(1, 4, 5)]
 
-# df <- read.csv(text = "Study,Category,Class
-# study17,cat H,class B;class C
-# study32,cat A;cat B,class A
-# study7,cat F,class A
-# study21,cat F,class C
-# study24,cat F,class B;class C
-# study15,cat E;cat K,class C")
 setDT(d)
 
 # make links
