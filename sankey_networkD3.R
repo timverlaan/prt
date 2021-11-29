@@ -5,7 +5,7 @@ library(tidyr)
 library(readxl)
 library(networkD3)
 
-PRT_sankey <- read_excel("PRT/PRT_sankey.xlsx")
+PRT_sankey <- read_excel("~/PRT/prt/PRT_sankey.xlsx")
 
 df <- PRT_sankey[, c(3, 2, 4,5)]
 
