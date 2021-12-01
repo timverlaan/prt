@@ -1,9 +1,14 @@
 library(networkD3)
 library(data.table)
+library(ggsankey)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+library(readxl)
 
-PRT_sankey <- read_excel("~/PRT/prt/PRT_sankey.xlsx")
+PRT_sankey <- read_excel("~/PRT/prt/PRT_sankey_v2.xlsx")
 
-d <- PRT_sankey[, c(1, 4, 5)]
+d <- PRT_sankey[, c(1, 5, 6)]
 
 setDT(d)
 
