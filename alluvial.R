@@ -35,9 +35,9 @@ is_alluvia_form(freq_df, axes = 1:3, silent = TRUE)
 
 # Add padding for labels (terrible method but it works).
 freq_df <- freq_df %>% 
-  mutate(study_label    = paste0("          ", freq_df$study)   , sep = "",
-         category_label = paste0("          ", freq_df$category), sep = "",
-         class_label    = paste0("          ", freq_df$class)   , sep = "")
+  mutate(study_label    = paste0("             ", freq_df$study)   , sep = "",
+         category_label = paste0("             ", freq_df$category), sep = "",
+         class_label    = paste0("             ", freq_df$class)   , sep = "")
 
 # Plot.
 ggplot(freq_df, aes(y = freq, axis1 = study_label, axis2 = category_label, axis3 = class_label)) +
@@ -50,4 +50,4 @@ ggplot(freq_df, aes(y = freq, axis1 = study_label, axis2 = category_label, axis3
         plot.background = element_rect(fill = "gray10")) 
 
 # Save plot.
-ggsave(filename = "alluvial.png", height = 20, width = 20)
+ggsave(filename = "alluvial.png", height = 20, width = 30)
