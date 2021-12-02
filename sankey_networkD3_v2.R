@@ -33,4 +33,4 @@ links$target_id <- match(links$target, nodes$name) - 1
 # plot
 sankeyNetwork(Links = links, Nodes = nodes, Source = 'source_id',
               Target = 'target_id', Value = 'value', NodeID = 'label',
-              fontSize = 12, fontFamily = 'Sans-serif')
+              fontSize = 12, fontFamily = 'Verdana',  colourScale= 'viridis')
