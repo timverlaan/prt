@@ -8,12 +8,12 @@ library(readxl)
 
 PRT_sankey <- read_excel("~/PRT/prt/PRT_sankey_v2.xlsx")
 
-d <- PRT_sankey[, c(1, 5, 6)]
+d <- PRT_sankey[, c(1,2,4,5, 6,7,8)]
 
 setDT(d)
 
 # make links
-links <- rbind(d[, .(source = Study, target = Category) ],
+links <- rbind(d[, .(source = Dataset, target = Category) ],
                d[, .(source = Category, target = Class) ])
 links[, rn := .I]
 # adjust value, based on "split"
@@ -33,4 +33,5 @@ links$target_id <- match(links$target, nodes$name) - 1
 # plot
 sankeyNetwork(Links = links, Nodes = nodes, Source = 'source_id',
               Target = 'target_id', Value = 'value', NodeID = 'label',
-              fontSize = 12, fontFamily = 'Verdana',  colourScale= 'viridis')
+              fontSize = 12, fontFamily = 'Verdana')
+
